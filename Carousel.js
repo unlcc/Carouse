@@ -23,14 +23,11 @@
 		_this.length = _this.srcList.length;//图片数量
 		//构造html结构
 		var liString = '<ul id="carousel-ul">';
-		// var dotString = '<ul id="dot-ul">';
 		for(let i = 0; i<_this.length; i++){
-			liString += '<li><img src="'+_this.srcList[i]+'" alt="Carouel - '+(i+1)+'"></li>'
-			// dotString += '<li class="dot"></li>'
+			liString += '<li><img src="'+_this.srcList[i]+'" alt="Carouel - '+(i+1)+'"></li>';
 		}
 		//无缝滚动的最后一张、第一张
 		liString += '<li><img src="'+_this.srcList[0]+'" alt="Carouel - last"></li></ul>';
-		// liString += dotString +"</ul>";
 		liString += '<span id="left-turn-carousel"><</span><span id="right-turn-carousel">></span>'
 		_this.dom.innerHTML = liString;
 		
@@ -85,18 +82,6 @@
 				//执行动画
 				_this.animate(ul,-_this.options.width.split("px")[0]*_this.pos,'right');
 			});
-
-			// dotUl.addEventListener("click", function(e){
-			// 	var target = e.target;
-			// 	if(target.nodeName.toLowerCase() == 'li'){
-			// 		var index;
-			// 		for(var i = 0; i < liList.length;i++){
-			// 			if(liList[i] == target){
-			// 				index = i;
-			// 			}
-			// 		}
-			// 	}
-			// });
 		},
 		animate: function(dom,target,direction,callback){
 			var _this = this;
